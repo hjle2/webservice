@@ -1,5 +1,6 @@
 package com.book.springboot.web;
 
+import com.book.springboot.config.auth.LoginUser;
 import com.book.springboot.config.auth.dto.SessionUser;
 import com.book.springboot.service.PostsService;
 import com.book.springboot.web.dto.PostsResponseDto;
@@ -18,10 +19,12 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
 
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        // @LoginUser 어노테이션으로 받아오기 때문에 주석 처리
+        // 모든 컨틀롤러는 @LoginUser를 사용하여 세션 정보를 가져올 수 있다
+        //SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
