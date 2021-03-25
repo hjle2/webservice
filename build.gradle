@@ -35,6 +35,8 @@ dependencies {
 
     compile('org.springframework.boot:spring-boot-starter-mustache')
 
+    compile('org.springframework.session:spring-session-jdbc')
+
     annotationProcessor('org.projectlombok:lombok')
     testAnnotationProcessor('org.projectlombok:lombok')
 
