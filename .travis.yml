@@ -34,7 +34,7 @@ deploy:
   - provider: codedeploy
       access_key_id: $AWS_ACCESS_KEY # Travis repo settings 에 설정된 값
       secret_access_key: $AWS_SECRET_KEY # Travis repo settings 에 설정된 값
-      bucket: webservice-build # SC 버킷
+      bucket: webservice01-build # SC 버킷
       key: webservice.zip
 
       bundle_type: zip # 압축 확장자
