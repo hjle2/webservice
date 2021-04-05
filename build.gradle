@@ -47,5 +47,3 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-jdbc')
     compile('mysql:mysql-connector-java')
 }
-
-// ec2 서버 연동하는거로 대신한다!!
