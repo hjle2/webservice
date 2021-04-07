@@ -6,7 +6,7 @@ branches:
   only:
     - master
 
-# Travis CI Server Home
+# Travis CI 서버의 Home
 cache:
   directories:
     - '$HOME/.m2/repository'
@@ -21,13 +21,12 @@ before_deploy:
 
 deploy:
   - provider: s3
-    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings 에 설정된 값
     secret_access_key: $AWS_SECRET_KEY
-
     bucket: webservice01-build # S3 버킷
     region: ap-northeast-2
     skip_cleanup: true
-    acl: private # zip 파일 접근을 private으로
+    acl: private # zip 파일 접근을 private 으로
     local_dir: deploy # before_deploy 에서 생성한 디렉토리
     wait-until-deployed: true
 
@@ -35,13 +34,10 @@ deploy:
       access_key_id: $AWS_ACCESS_KEY # Travis repo settings 에 설정된 값
       secret_access_key: $AWS_SECRET_KEY # Travis repo settings 에 설정된 값
       bucket: webservice01-build # SC 버킷
-      key: webservice.zip
-
+      key: webservice.zip # 빌드 파일을 압축해서 전달
       bundle_type: zip # 압축 확장자
       application: webservice # 웹 콘솔에서 등록한 CodeDeploy 애플리케이션
-
       deployment_group: webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
-
       region: ap-northeast-2
       wait-until-deployed: true
 
