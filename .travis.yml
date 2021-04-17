@@ -15,9 +15,17 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r webservice *
-  - mkdir -p deploy # zip에 포함시킬 파일들을 담을 디렉토리 생성
-  - mv webservice.zip deploy/webservice.zip # deploy로 zip파일 이동
+  #- zip -r webservice *
+  #- mkdir -p deploy # zip에 포함시킬 파일들을 담을 디렉토리 생성
+  #- mv webservice.zip deploy/webservice.zip # deploy로 zip파일 이동
+  # 위 코드는 프로젝트의 모든 파일을 zip 파일로 만드 내용, 아래 코드는 실제로 필요한 jar, appspec.yml, 배포를 위한 내용
+  - mkdir -p before-deploy # zip에 포함시킬 파일들을 담을 디렉토리 생성 Travis CI 는 특정 파일 업로드가 불가능, 디렉토리 단위로만 가능하기 때문
+  - cp scripts/*.sh before-deploy/
+  - cp appspec.yml before-deploy/
+  - cp build/libs/*.jar before-deploy/
+  - cd before-deploy && zip -r before-deploy *
+  - cd ../ $$ mkdir -p deploy
+  - mv before-deploy/before-deploy.zip deploy/webservice.zip
 
 deploy:
   - provider: s3
