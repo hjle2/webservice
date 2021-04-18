@@ -1,7 +1,7 @@
 #Travis CI, S3, CodeDeploy 연동 후 Jar 배포 실행
 #!/bin/bash
 
-REPOSITORY=/home/ec-user/app/step2
+REPOSITORY=/home/ec2-user/app/step2
 PROJECT_NAME=webservice
 
 echo "> Build 파일 복사"
