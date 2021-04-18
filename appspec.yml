@@ -7,7 +7,7 @@ files:
 
 permissions:
   - object: /
-    pattren: "**"
+    pattern: "**"
     owner: ec2-user
     group: ec2-user
 
