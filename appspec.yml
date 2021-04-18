@@ -4,7 +4,6 @@ files:
   - source:  /
     destination: /home/ec2-user/app/step2/zip/
     overwrite: yes
-
 # CodeDeploy에서 EC2 서버로 넘겨준 파일들에게 모두 ec2-user 권한을 줌
 permissions:
   - object: /
