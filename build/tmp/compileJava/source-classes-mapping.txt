@@ -2,8 +2,8 @@ com/book/springboot/web/dto/PostsListResponseDto.java
  com.book.springboot.web.dto.PostsListResponseDto
 com/book/springboot/web/dto/HelloResponseDto.java
  com.book.springboot.web.dto.HelloResponseDto
-com/book/springboot/Application.java
- com.book.springboot.Application
+com/book/springboot/web/IndexController.java
+ com.book.springboot.web.IndexController
 com/book/springboot/web/PostsApiController.java
  com.book.springboot.web.PostsApiController
 com/book/springboot/domain/BaseTimeEntity.java
@@ -49,5 +49,5 @@ com/book/springboot/web/dto/PostsUpdateRequestDto.java
  com.book.springboot.web.dto.PostsUpdateRequestDto$PostsUpdateRequestDtoBuilder
 com/book/springboot/web/dto/PostsResponseDto.java
  com.book.springboot.web.dto.PostsResponseDto
-com/book/springboot/web/IndexController.java
- com.book.springboot.web.IndexController
+com/book/springboot/Application.java
+ com.book.springboot.Application
