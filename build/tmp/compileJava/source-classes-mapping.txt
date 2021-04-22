@@ -1,5 +1,7 @@
 com/book/springboot/web/dto/PostsListResponseDto.java
  com.book.springboot.web.dto.PostsListResponseDto
+com/book/springboot/web/dto/HelloResponseDto.java
+ com.book.springboot.web.dto.HelloResponseDto
 com/book/springboot/Application.java
  com.book.springboot.Application
 com/book/springboot/web/PostsApiController.java
